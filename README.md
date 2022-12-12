@@ -13,7 +13,7 @@ TopicExtractor is a part of a whole system that gives to end-users the ability t
 In all three scenarios, the results are returned to users with the presence of a graphic illustration that contains the corresponding keywords (being written or spoken) in a WordCloud format. In case of speeches, these also include timestamps to determine the suitable time spot. 
 
 <p float="left" align="center">
-<img src="te.png" alt="te" width="400" height="200"/>
+<img src="te.png" alt="te" width="400" />
 
 <img src="sys.png" alt="sys" width="400" height="200"/>
 </p>
