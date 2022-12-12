@@ -1,7 +1,7 @@
 # TopicExtractor
 
-TopicExtractor is a system that provides topic modelling on news articles and political speeches.
-It consists of two major concepts. While examining articles, it processes texts per paragraph. While examining speeches, the processed part is the one provided (as the output) by the Google Speech To Text API every time during the recording. Both of them form the system's input.
+TopicExtractor is a system that provides topic modelling on news articles and political speeches in modern Greek language.
+It consists of two major concepts. While examining articles, it processes texts per paragraph. While examining speeches, the processed part is the one provided (as the output) by the Google Speech To Text API every time during the recording. Both of them form the system's input. 
 
 # System's Description
 
@@ -25,3 +25,5 @@ In all three scenarios, the results are returned to users with the presence of a
 </p>
 
 # System's code in Google Colab
+
+* Training of BERTopic models: 
