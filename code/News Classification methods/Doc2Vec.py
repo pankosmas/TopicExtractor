@@ -291,6 +291,6 @@ ctgs = []
 for elem in y:
     ctgs.append(ctg[elem])
 test_df['auto_category_svm'] = ctgs
-test_df.to_csv("C:\\Users\Panagiotis\\Desktop\\skata3.csv", encoding='utf-8')
+test_df.to_csv("C:\\Users\Panagiotis\\Desktop\\file3.csv", encoding='utf-8')
 
 				
