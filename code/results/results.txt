@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<link rel="stylesheet" href="mystyle.css">
+		<title> </title>
+</head>
+<body>
+		
+		<div class="timeline">
+			  <div class="container">
+				<div class="content">
+				  <h3>Κατηγορία: ΧΧΧΧΧΧΧΧ , 00:43</h2>
+				  <h4>Θέμα: ΧΧΧΧΧΧΧΧ</h4>
+				  <img src="photos/43410.png" alt="forest" height="150px" width="250px"/>
+				</div>
+			  </div>
+			  <div class="container">
+				<div class="content">
+				  <h3>Κατηγορία: ΧΧΧΧΧΧΧΧ , 00:43</h2>
+				  <h4>Θέμα: ΧΧΧΧΧΧΧΧ</h4>
+				  <img src="photos/43410.png" alt="forest" height="150px" width="250px"/>
+				</div>
+			  </div>
+			  <div class="container">
+				<div class="content">
+				  <h3>Κατηγορία: ΧΧΧΧΧΧΧΧ , 00:43</h2>
+				  <h4>Θέμα: ΧΧΧΧΧΧΧΧ</h4>
+				  <img src="photos/43410.png" alt="forest" height="150px" width="250px"/>
+				</div>
+			  </div>
+			  <div class="container">
+				<div class="content">
+				  <h3>Κατηγορία: ΧΧΧΧΧΧΧΧ , 00:43</h2>
+				  <h4>Θέμα: ΧΧΧΧΧΧΧΧ</h4>
+				  <img src="photos/43410.png" alt="forest" height="150px" width="250px"/>
+				</div>
+			  </div>
+		
+		</div>
+		
+</body>
+</html>
+
