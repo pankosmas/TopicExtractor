@@ -15,7 +15,7 @@ In all three scenarios, the results are returned to users with the presence of a
 <p float="left" align="center">
 <img src="te.png" alt="te" width="400" />
 
-<img src="sys.png" alt="sys" width="400" height="200"/>
+<img src="sys.png" alt="sys" width="400" />
 </p>
 
 <p align="center">
