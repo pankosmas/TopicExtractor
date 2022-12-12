@@ -3,11 +3,11 @@
 TopicExtractor is a system that provides topic modelling on news articles and political speeches.
 It consists of two major concepts. While examining articles, it processes texts per paragraph. While examining speeches, the processed part is the one provided (as the output) by the Google Speech To Text API every time during the recording. Both of them form the system's input.
 
+Firstly, the input is assigned to a specific topic (which is recognized by the topic model) and afterwards the resulting topic is assigned to its corresponding news category (1 out of the 12 main categories). For the first task BERTopic method is implemented and for the classification task the greek version of BERT (greek-BERT) was fine-tuned to perform it.
+
 <p align="center">
 <img src="te.png" alt="te" width="400"/>
 </p>
-
-Firstly, the input is assigned to a specific topic (which is recognized by the topic model) and afterwards the resulting topic is assigned to its corresponding news category (1 out of the 12 main categories). For the first task BERTopic method is implemented and for the classification task the greek version of BERT (greek-BERT) was fine-tuned to perform it.
 
 <p align="center">
 <img src="sys.png" alt="sys" width="400"/>
