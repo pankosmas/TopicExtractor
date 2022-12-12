@@ -5,15 +5,11 @@ It consists of two major concepts. While examining articles, it processes texts 
 
 Firstly, the input is assigned to a specific topic (which is recognized by the topic model) and afterwards the resulting topic is assigned to its corresponding news category (1 out of the 12 main categories). For the first task BERTopic method is implemented and for the classification task the greek version of BERT (greek-BERT) was fine-tuned to perform it.
 
-<div class=parent>
-<p align="center">
+<p float="left">
 <img src="te.png" alt="te" width="400"/>
-</p>
 
-<p align="center">
 <img src="sys.png" alt="sys" width="400"/>
 </p>
-</div>
 
 TopicExtractor is a part of a whole system that gives to end-users the ability to:
 * compose an article
@@ -25,8 +21,3 @@ In all three scenarios, the results are returned to users with the presence of a
 <p align="center">
 <img src="wc.png" alt="wc" width="400"/>
 </p>
-
-.parent{
-display:flex;
-gap: 5px;
-}
