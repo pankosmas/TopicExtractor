@@ -28,4 +28,4 @@ In all three scenarios, the results are returned to users with the presence of a
 
 * Training of BERTopic models: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://github.com/pankosmas/TopicExtractor/blob/main/Google%20Colabs/BERTopic%20Topic%20Modelling.ipynb)
 * Training of Greek-BERT Classifier: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://github.com/pankosmas/TopicExtractor/blob/main/Google%20Colabs/Greek-BERT%20Classification.ipynb)
-* Full pipeline (STT, BERTopic, WordClouds): 
+* Full pipeline (STT, BERTopic, WordClouds): [here](https://github.com/pankosmas/TopicExtractor/tree/main/code/MobileJournalism)
