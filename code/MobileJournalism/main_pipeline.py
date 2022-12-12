@@ -34,8 +34,17 @@ GREEN = '\033[0;32m'
 YELLOW = '\033[0;33m'
 
 wordcloud, stoplist, custom_kw_extr = return_elements()
-sentence_model = SentenceTransformer("paraphrase-multilingual-mpnet-base-v2")
-my_loaded_topic_model = BERTopic.load("C:\\Python\\myNewsScraper\\omilies_model", embedding_model=sentence_model)
+# sentence_model = SentenceTransformer("paraphrase-multilingual-mpnet-base-v2")
+# my_loaded_topic_model = BERTopic.load("C:\\Python\\myNewsScraper\\omilies_model", embedding_model=sentence_model)
+
+omilies_model = BERTopic.load("C:\\Python\\torchidis\\omilies_model2", embedding_model="lighteternal/stsb-xlm-r-greek-transfer")
+arthra_model = BERTopic.load("C:\\Python\\torchidis\\arthra_model", embedding_model="lighteternal/stsb-xlm-r-greek-transfer")
+
+with open('C:\\Users\\Panagiotis\\Desktop\\omilies_labels.txt', encoding='utf8') as f:
+    lines = f.readlines()
+
+for m in range(len(lines)):
+    omilies_model.set_topic_labels({m: str(lines[m])})
 
 cur_speech = []
 text_array = []
@@ -304,24 +313,50 @@ def listen_print_loop(responses, stream):
             keywords2 = [i[0] for i in keywords2]
             keywords2.extend(ents)
 
-            topics, probs = my_loaded_topic_model.transform(text)
+            topics, probs = omilies_model.transform(str(text).lower())
 
             if topics == [-1]:
                 pass
             else:
-                skata = my_loaded_topic_model.get_topic(topics[0])
-                print(skata)
-                label = ''
-                for i in range(len(skata)):
-                    label += " "
-                    label += skata[i][0]
+                anathesi = omilies_model.get_topic_info(topics[0])['CustomName'][0]
+                anathesi = anathesi.replace('\n', '')
+                anathesi = anathesi.split("_")
+                thema = anathesi[0]
+                katigoria = anathesi[1]
+                print(thema)
+
                 kws = " ".join(keywords2)
                 try:
                     wordcloud.generate(kws)
-                    plt.figure(figsize=(10, 5), dpi=80, edgecolor='b', layout='tight')
-                    plt.title(f"{label}\n", fontdict={'fontsize': 30, 'fontweight': 15})
+                    plt.figure(figsize=(10, 5), dpi=80, edgecolor='b')
+                    # plt.title(f"{label}\n", fontdict={'fontsize': 30, 'fontweight': 15})
                     plt.imshow(wordcloud, interpolation='bilinear')
                     plt.axis("off")
+                    plt.savefig("C:\\Users\\Panagiotis\\Desktop\\results\\photos\\" + str(corrected_time) + ".png")
+
+                    seconds = float(corrected_time/1000)
+                    (hours, seconds) = divmod(seconds, 3600)
+                    (minutes, seconds) = divmod(seconds, 60)
+
+                    timestamp = f"{hours:02.0f}:{minutes:02.0f}:{seconds:05.2f}"
+
+                    html_code = f'<div class="container"> <div class="content"> <h3>Κατηγορία: {katigoria} , {timestamp}</h2> ' \
+                                f'<h4>Θέμα: {thema}</h4> <img src="photos/{str(corrected_time)}.png" alt="forest" height="200px" ' \
+                                'width="300px"/> </div> </div> '
+
+                    with open('C:\\Users\\Panagiotis\\Desktop\\results\\results.html', 'r', encoding='utf8') as fh:
+                        contents = fh.readlines()
+
+                    contents = " ".join(contents)
+                    index_ofdiv = str(contents).rfind('</div>')
+                    new_html = str(contents)[:index_ofdiv] + html_code + str(contents)[index_ofdiv:]
+                    new_html = new_html.replace('\t', '')
+                    new_html = new_html.replace('\n', '')
+                    new_html = new_html.replace('\\', '')
+
+                    with open('C:\\Users\\Panagiotis\\Desktop\\results\\results.html', 'w', encoding='utf8') as fh:
+                        fh.write(new_html)
+
                     plt.savefig("C:\\Python\\myNewsScraper\\speech_photos\\" + str(corrected_time) + ".png")
                 except ValueError:
                     print("No keywords for this batch of speech!")
