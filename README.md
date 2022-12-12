@@ -27,4 +27,4 @@ In all three scenarios, the results are returned to users with the presence of a
 # System's code in Google Colab
 
 * Training of BERTopic models: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://github.com/pankosmas/TopicExtractor/blob/main/BERTopic%20Topic%20Modelling.ipynb)
-
+* Training of Greek-BERT Classifier: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)]([https://github.com/pankosmas/TopicExtractor/blob/main/BERTopic%20Topic%20Modelling.ipynb](https://github.com/pankosmas/TopicExtractor/blob/main/Greek-BERT%20Classification.ipynb)
